@@ -6,22 +6,22 @@
 
 {% block main %}
 <main>
-  <form action="modifier_contact.php" method="post" class="m-5 ">
+  <form action="modifier_contact.php?key={{ key }}" method="post" class="m-5 ">
   <div class="mb-3">
     <label for="prenom" class="form-label">Prénom</label>
-    <input type="text" name="prenom" class="form-control" id="prenom" value="{{contact.key.prenom}}">
+    <input type="text" name="prenom" class="form-control" id="prenom" value="{{contact.prenom}}">
   </div>
   <div class="mb-3">
     <label for="num" class="form-label">Nom</label>
-    <input type="text" name="nom" class="form-control" id="nom">
+    <input type="text" name="nom" class="form-control" id="nom" value="{{contact.nom}}">
   </div>
   <div class="mb-3">
     <label for="num" class="form-label">Numéro de téléphone</label>
-    <input type="tel" name="tel" class="form-control" id="num">
+    <input type="tel" name="tel" class="form-control" id="num" value="{{contact.tel}}">
   </div>
   <div class="mb-3">
     <label for="email" class="form-label">Adresse mail</label>
-    <input type="email" name="mail" class="form-control" id="email" aria-describedby="emailHelp">
+    <input type="email" name="mail" class="form-control" id="email" aria-describedby="emailHelp" value="{{contact.mail}}">
   </div>
   <button type="submit" class="btn btn-primary">Valider</button>
 </form>

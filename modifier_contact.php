@@ -10,9 +10,15 @@ $twig = new Twig\Environment($loader, [
 ]);
 
 $key = $_GET["key"];
+$ancienContact = $_SESSION["contacts"][$key];
 
 
-
-echo $twig->render("modifier_contact.html.twig", [
-    "key" => $key
-]);
+if (empty($_POST)) {
+    echo $twig->render("modifier_contact.html.twig", [
+        "key" => $key,
+        "contact" => $ancienContact
+    ]);
+} else {
+    $_SESSION["contacts"][$key] = $_POST;
+    header('location: index.php');
+}

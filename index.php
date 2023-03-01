@@ -10,6 +10,7 @@ $twig = new Twig\Environment($loader, [
 
 $contacts = $_SESSION["contacts"];
 
+
 echo $twig->render("index.html.twig", [
     "contacts" => $contacts
 ]);
