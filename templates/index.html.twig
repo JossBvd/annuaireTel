@@ -11,7 +11,8 @@
         <p><i class="fa-solid fa-phone"></i> {{ contact.tel }}</p>
         <p><i class="fa-regular fa-envelope"></i> {{ contact.mail }}</p>
         <div class="text-center">
-        <a><i class="fa-solid fa-pen-to-square"></i></a><a href="supprimer_contact.php?key={{ key }}"><i class="fa-solid fa-trash-can mx-2"></i></a>
+        <a href="modifier_contact.php?key={{ key }}" class="btn btn-primary"><i class="fa-solid fa-pen-to-square"></i></a>
+        <a href="supprimer_contact.php?key={{ key }}" class="btn btn-danger" onclick="return confirm('Voulez vous supprimer ce contact ?')"><i class="fa-solid fa-trash-can"></i></a>
         </div>
         
     
