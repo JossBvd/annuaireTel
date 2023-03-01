@@ -4,15 +4,16 @@
 
 {% block main %}
 <main>
-  {% for contact in contacts %}
+  {% for key, contact in contacts %}
   <div class="card container mb-3">
     <div class="card-body">
         <h4 class="mb-4"><i class="fa-solid fa-user"></i> {{ contact.prenom }} {{ contact.nom}}</h4>
         <p><i class="fa-solid fa-phone"></i> {{ contact.tel }}</p>
         <p><i class="fa-regular fa-envelope"></i> {{ contact.mail }}</p>
         <div class="text-center">
-        <i class="fa-solid fa-pen-to-square"></i><i class="fa-solid fa-trash-can mx-2"></i>
+        <a><i class="fa-solid fa-pen-to-square"></i></a><a href="supprimer_contact.php?key={{ key }}"><i class="fa-solid fa-trash-can mx-2"></i></a>
         </div>
+        
     
     </div>
   </div>
