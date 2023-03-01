@@ -8,8 +8,11 @@ $twig = new Twig\Environment($loader, [
     "debug" => true
 ]);
 
-$contacts = $_SESSION["contacts"];
+if (empty($_SESSION["contacts"])) {
+    $_SESSION["contacts"] = array();
+}
 
+$contacts = $_SESSION["contacts"];
 
 echo $twig->render("index.html.twig", [
     "contacts" => $contacts

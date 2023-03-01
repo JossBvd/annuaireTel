@@ -2,14 +2,21 @@
 <title>Annuaire téléphonique</title>
 {% endblock %}
 
+{% block js %}
+<script src="app.js" defer></script>
+{% endblock %}
+
 {% block main %}
 <main>
   {% for key, contact in contacts %}
+  {% if not contact %}
+  <p>Vous n'avez pas de contact dans votre répertoire...</p>
+  {% endif %}
   <div class="card container mb-3">
     <div class="card-body">
         <h4 class="mb-4"><i class="fa-solid fa-user"></i> {{ contact.prenom }} {{ contact.nom}}</h4>
         <a href="tel:{{ contact.tel }}"><i class="fa-solid fa-phone"></i> {{ contact.tel }}</a><br><br>
-        <a href="mailto:{{ contact.mail }}"><i class="fa-regular fa-envelope"></i> {{ contact.mail }}</a>
+        <a href="mailto:{{ contact.mail }}"><i class="fa-regular fa-envelope"></i> {{ contact.mail }}</a><br><br>
         <div class="text-end">
         <a href="modifier_contact.php?key={{ key }}" class="btn btn-primary"><i class="fa-solid fa-pen-to-square"></i></a>
         <a href="supprimer_contact.php?key={{ key }}" class="btn btn-danger" onclick="return confirm('Voulez vous supprimer ce contact ?')"><i class="fa-solid fa-trash-can"></i></a>
