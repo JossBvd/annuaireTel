@@ -1,0 +1,17 @@
+{% extends "base.html.twig" %} {% block title %}
+<title>Annuaire téléphonique</title>
+{% endblock %}
+
+{% block main %}
+<main>
+  {% for contact in contacts %}
+  <div class="card container mb-3">
+    <div class="card-body">
+        <h4 class="mb-4"><i class="fa-solid fa-user"></i> {{ contact.prenom }} {{ contact.nom}}</h4>
+        <p><i class="fa-solid fa-phone"></i> {{ contact.tel }}</p>
+        <p><i class="fa-regular fa-envelope"></i> {{ contact.mail }}</p>
+    </div>
+  </div>
+  {% endfor %}
+</main>
+{% endblock %}

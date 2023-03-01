@@ -1,0 +1,27 @@
+{% extends "base.html.twig" %} {% block title %}
+<title>Ajouter un contact</title>
+{% endblock %}
+
+{% block main %}
+<main>
+  <form action="ajouter_contact.php" method="post" class="m-5 ">
+  <div class="mb-3">
+    <label for="prenom" class="form-label">Prénom</label>
+    <input type="text" name="prenom" class="form-control" id="prenom">
+  </div>
+  <div class="mb-3">
+    <label for="num" class="form-label">Nom</label>
+    <input type="text" name="nom" class="form-control" id="nom">
+  </div>
+  <div class="mb-3">
+    <label for="num" class="form-label">Numéro de téléphone</label>
+    <input type="tel" name="tel" class="form-control" id="num">
+  </div>
+  <div class="mb-3">
+    <label for="email" class="form-label">Adresse mail</label>
+    <input type="email" name="mail" class="form-control" id="email" aria-describedby="emailHelp">
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+</main>
+{% endblock %}
